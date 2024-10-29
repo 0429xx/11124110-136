@@ -24,3 +24,19 @@ pip3 將自動安裝所有模型和依賴項。
 ```
 ![](001.png)
 
+如果您有可與 Tensorflow 一起使用的 GPU:
+```
+pip install tensorflow-gpu
+```
+*Other dependencies*
+```
+!sudo apt-get install protobuf-compiler python3-pil python3-lxml python3-tk git
+!pip3 install pillow Cython lxml jupyter matplotlib contextlib2
+!pip3 install --user -r models/official/requirements.txt
+!pip install tensorflow-io
+!pip3 install pycocotools
+```
+複製TensorFlow模型倉庫運行以下程式碼，克隆```TensorFlow```模型庫並進入```research```目錄：
+```
+!git clone https://github.com/tensorflow/models.git
+```
