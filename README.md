@@ -22,5 +22,5 @@ pip3 將自動安裝所有模型和依賴項。
 ```
 !pip3 install tf-models-official
 ```
-
+![](001.png)
 
