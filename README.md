@@ -75,6 +75,6 @@ os.environ['PYTHONPATH'] += ":/content/drive/MyDrive/113-ai/models/research:/con
 Gathering data
 -------------------------
 2.1 開啟您的google chrome瀏覽器並安裝一個名為Download All Images的擴充功能。
-![002.png](img.jpg)
+![](002.png)
 
 2.2 現在在Google圖片中搜尋所需的圖片選擇，在我的例子中是「 Apple」。現在，按一下「下載所有圖像」擴充功能按鈕，該按鈕將位於瀏覽器的右上角。您將獲得一個包含圖像的zip檔。然後將其提取。
