@@ -78,3 +78,11 @@ Gathering data
 ![](002.png)
 
 2.2 現在在Google圖片中搜尋所需的圖片選擇，在我的例子中是「 Apple」。現在，按一下「下載所有圖像」擴充功能按鈕，該按鈕將位於瀏覽器的右上角。您將獲得一個包含圖像的zip檔。然後將其提取。
+![](003.png)
+
+Labeling data
+----------------
+打開您的終端並透過以下方式安裝LabelImg，LabelImg是圖形影像註解工具，安裝labelImg後，透過鍵入將其打開
+```
+!pip3 install labelImg
+```
