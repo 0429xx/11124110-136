@@ -92,3 +92,10 @@ Labeling data
 ```
 !git clone https://github.com/zjgulai/Tensorflow-Object-Detection-API-With-Custom-Dataset.git
 ```
+![](005.png)
+
+### 克隆之後進入目錄：
+```
+%cd models/research/Tensorflow-Object-Detection-API-With-Custom-Dataset
+```
+![](git.jpg)
