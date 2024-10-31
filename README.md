@@ -98,4 +98,53 @@ Labeling data
 ```
 %cd models/research/Tensorflow-Object-Detection-API-With-Custom-Dataset
 ```
-![](git.jpg)
+![](006.png)
+
+Generating TFRecords for training
+-----------------------------------
+現在，將圖像檔案的70％複製到訓練資料夾圖像/訓練中，其餘30％複製到測試資料夾中。
+標記影像後，我們需要建立 TFRecord，將其用作目標偵測器訓練的輸入資料。為了建立 TFRecords，我們將使用```datitran/raccoon_datasetgithub.com```中的兩個腳本
+```xml_to_csv.py```和```generate_tfrecord.py```檔現在在該資料夾中，我們可以透過開啟命令列並鍵入以下內容，將XML檔案轉換為```train_label.csv```和```test_label.csv```：
+
+
+```
+!python xml_csv.py
+```
+
+![](007.png)
+
+
+它們在資料目錄中會建立兩個檔案。一個叫做```test_labels.csv```，另一個叫做```train_labels.csv```
+在將新建立的檔案轉換為TFRecords之前，我們需要更改```generate_tfrecords.py```檔案中的幾行。
+```
+# TO-DO replace this with label map , replace with your own classes
+def class_text_to_int(row_label):
+    if row_label == 'apple':
+        return 1
+    else:
+        return 0
+```
+如果你有多類標記：
+```
+# TO-DO replace this with label map
+def class_text_to_int(row_label):
+    if row_label == 'apple':
+        return 1
+    elif row_label == 'banana':
+        return 2
+    elif row_label == 'orange':
+        return 3
+    else:
+        return None
+```
+
+現在，您可以透過鍵入以下內容來產生 TFRecords：
+-----------------------------
+```
+python3 generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record --image_dir=images/train
+python3 generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=test.record --image_dir=images/test
+```
+這兩個指令產生一個```train.record```和一個```test.record```文件，可用來訓練我們的物件偵測器。
+
+
+![](實作bycolab/5.jpg)
