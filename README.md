@@ -86,3 +86,9 @@ Labeling data
 ```
 !pip3 install labelImg
 ```
+![](004.jpg)
+上面的內容。並對所有圖片執行此操作。它正在做的是，它正在產生一個XML文件，其中包含帶有其標籤的物件座標，標記了約100張圖片，現在克隆儲存庫
+```zjgulai/Tensorflow-Object-Detection-API-With-Custom-Datasetgithub.com```
+```
+!git clone https://github.com/zjgulai/Tensorflow-Object-Detection-API-With-Custom-Dataset.git
+```
