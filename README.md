@@ -147,4 +147,4 @@ python3 generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=tes
 這兩個指令產生一個```train.record```和一個```test.record```文件，可用來訓練我們的物件偵測器。
 
 
-![](實作bycolab/5.jpg)
+![](009.png)
