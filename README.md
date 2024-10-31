@@ -147,4 +147,71 @@ python3 generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=tes
 這兩個指令產生一個```train.record```和一個```test.record```文件，可用來訓練我們的物件偵測器。
 
 
-![](009.png)
+![](009.jpg)
+
+訓練配置
+-----------------------
+在訓練之前，我們要做的最後一件事是```create a label map ```and a ```training configuration file``` .
+
+建立標籤圖
+-----------------------
+標籤映射映射： id 到 name。我已經為我的訓練創建了一個標籤圖檔案。它看起來像這樣：
+
+
+編輯：```object-detection.pbtxt```:
+```
+item{
+  id:1
+  name:"apple"
+}
+```
+如果您使用多個類，請遵循此模式
+```
+item {
+    id: 1
+    name: 'apple'
+}
+item {
+    id: 2
+    name: 'banana'
+}
+item {
+    id: 3
+    name: 'orange'
+}
+item {
+    id: 4
+    name: 'etc'
+}
+```
+每個類別的ID號碼應與 _generate_tfrecord.py_ 檔案中指定的ID相符。
+
+
+建立訓練配置
+-----------
+我們將在Google Colab中訓練我們的模型[在 Colab 中打開](https://colab.research.google.com/drive/1o7JB0pWanEMn6qnRnEXphu0T4YbuKLL2 "在 Colab 中打開")，匯出中我使用「SSD MOBILENET V2」進行訓練，批次大小為 4。您可以變更步驟數、要使用的預訓練模型以及批次和大小。在此之下，您需要上傳生成的```train.record```、```test.record```和```object-detection.pbtxt```檔案。
+
+
+![](008.jpg)
+
+
+訓練模型
+---------
+現在，在上傳所有這些文件之後，運行下面的所有單元格。它將得到訓練。
+
+
+導出推理圖
+-------------
+如果已執行所有單元，則最後將下載一個名為Frozen_inference_graph.pb的檔案。
+
+
+測試物體探測器
+-----------
+現在，將Frozen_inference_graph.pb檔案複製到我的GitHub克隆資料夾中。然後，您需要在該webcam_inference.py中進行一些編輯，以測試您自己的物件偵測器。打開該文件並檢查代碼。
+如果您正確執行了上述所有步驟，則可以透過網路攝影機測試模型。
+
+
+結論
+-----------
+Tensorflow 物件偵測 API 可讓您使用遷移學習技術建立自己的物件偵測器。
+這是獲取代碼的連結。
